@@ -1,43 +1,133 @@
 # Personal Finance Tracker
 
-Personal Finance Tracker is a lightweight application designed to help users efficiently manage their financial transactions and budgets while keeping their data private. With an intuitive user interface, custom themes, and features focused on user needs, it is the perfect tool to track expenses, monitor savings, and manage budgets effectively.
+Personal Finance Tracker is a user-centric mobile application designed to help individuals track their expenses, manage their finances, and gain meaningful insights into their spending habits. The app offers customization, robust data management, and detailed reporting to make financial management simple and effective.
+
+---
 
 ## Features
 
-### 1. User Management
-- **New Users**: Create a profile by adding your username, preferred currency, and initial setup preferences.
-- **Existing Users**: Import existing data in JSON format for seamless continuity.
+### 1. **User Data Management**
+- Securely manage user data, ensuring privacy and reliability.
 
-### 2. Transactions
-- **Add, Edit, Delete**: Log all income and expenses easily with fields for category, amount, date, and description.
-- **Custom Categories**: Create and manage your own categories for personalized tracking.
+### 2. **Customizable User Data**
+- Tailor user information to suit individual preferences.
 
-### 3. Budget and Goals
-- Set monthly/weekly budgets for specific categories.
-- Track progress toward financial goals, such as savings or debt repayment.
+### 3. **CRUD Transactions**
+- Add, edit, update, or delete financial transactions with ease.
 
-### 4. Insights and Analytics
-- **Spending Summary**: Get a detailed overview of your income and expenses through customizable reports.
-- **Visuals**: Analyze your spending patterns with interactive charts and graphs.
-- **Monthly Heatmap**: Spot trends using a visual heatmap of daily expenditures.
+### 4. **Monthly Budget Goals**
+- Set and monitor monthly budget goals for effective financial planning.
 
-### 5. Debt and Loan Management
-- Track money borrowed or lent with a simple interface to manage repayments.
+### 5. **Spending Summary Insights**
+- Visualize spending patterns through summary insights and analytics.
 
-### 6. Recurring Transactions
-- Automatically log recurring income or expense transactions (e.g., subscriptions, salaries, or rent).
+### 6. **Custom Categories with Icons**
+- Create and manage categories, selecting from a range of icons for visual clarity.
 
-### 7. Export and Import
-- Export all data in JSON format for backups or sharing.
-- Import previously saved data to continue tracking seamlessly across devices.
+### 7. **Debt Management**
+- Keep track of borrowings and lendings with a dedicated debt management feature.
 
-### 8. Privacy and Security
-- **Local Storage**: All data is securely stored on the device, ensuring privacy.
-- **No Cloud Dependency**: User data remains private without external servers or data collection.
-- **Backup Options**: Backup files can be stored securely at the user's discretion.
+### 8. **Reports**
+- Generate daily or monthly financial reports for comprehensive insights.
 
-### 9. User Customization
-- Switch between light and dark themes based on personal preference.
-- Personalize settings such as currency symbols, usernames, and category names.
+### 9. **Dark/Light Mode Support**
+- Switch between light and dark themes to suit user preferences.
 
-NOTE: Readme will be updated soon as per my App development progresses
+### 10. **Currency Customization**
+- Choose an appropriate currency to match your regional or personal requirements.
+
+### 11. **User Customization**
+- **Themes**: Seamlessly switch between light and dark themes.
+- **Settings**: Personalize settings, including:
+  - Currency symbols
+  - Username changes
+  - Category names
+- **Categories**: Create and manage custom categories for more personalized tracking.
+
+---
+
+## Tech Stack
+
+The application leverages modern tools and frameworks for efficient development and smooth performance:
+
+- **React Native**: Core framework for building the application.
+- **Realm**: Lightweight and secure database for local storage.
+- **Redux Toolkit**: Simplified state management with powerful tools.
+- **Redux-Saga**: Manages application side-effects effectively.
+- **Zod**: Ensures data validation and structure integrity.
+
+---
+
+## Getting Started
+
+Follow these steps to set up and run the project locally:
+
+### Prerequisites
+1. Ensure you have **Node.js** installed on your machine. Download it [here](https://nodejs.org/).
+2. Set up your development environment for **React Native**:
+   - Android Studio (for Android development)
+   - Xcode (for iOS development)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/NevilPatel01/personal-finance-tracker.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd personal-finance-tracker
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+   ```
+   **or**
+   ```bash
+   yarn install
+   ```
+
+4. Start the app:
+
+   - For Android:
+     ```bash
+     npx react-native run-android
+     ```
+   - For iOS:
+     ```bash
+     npx react-native run-ios
+     ```
+
+### Development Tips
+- Use `npm start` or `yarn start` to launch the Metro Bundler.
+- Connect a physical device or use an emulator to test the application.
+
+---
+
+## Contribution
+
+Contributions are welcome! To contribute to the project:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature description"
+   ```
+4. Push the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
+
+---
+
+Start tracking your finances today with **Personal Finance Tracker** and take control of your financial future!
