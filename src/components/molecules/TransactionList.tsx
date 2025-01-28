@@ -53,6 +53,13 @@ const TransactionItem: React.FC<TransactionItemProps> = ({
     null,
   );
 
+  const handlePress = (expense: Expense) => {
+    console.log('ExpenseId', expense._id);
+    console.log('typeof expense.date:', typeof expense.date);
+    console.log('Expense Date', expense.date);
+    navigate('ViewTransactionScreen', {expenseId: String(expense._id)});
+  };
+
   const handleEdit = (
     expenseId: string,
     expenseTitle: string,
@@ -183,69 +190,84 @@ const TransactionItem: React.FC<TransactionItemProps> = ({
             renderLeftActions={() => renderLeftActions(expense)}
             renderRightActions={() => renderRightActions(expense)}
             friction={2}>
-            <Animated.View
-              style={[
-                styles.transactionContainer,
-                {
-                  backgroundColor: colors.containerColor,
-                },
-              ]}>
-              <View style={styles.iconNameContainer}>
-                <View
-                  style={[
-                    styles.iconContainer,
-                    {backgroundColor: colors.iconContainer},
-                  ]}>
-                  <Icon
-                    name={expense.category?.icon ?? 'selection-ellipse'}
-                    size={20}
-                    color={expense.category?.color ?? colors.buttonText}
-                    type={'MaterialCommunityIcons'}
-                  />
-                </View>
-                <View>
-                  <PrimaryText>{truncateString(expense.title, 15)}</PrimaryText>
-                  <View style={styles.descriptionContainer}>
-                    <PrimaryText
-                      style={{
-                        color: colors.primaryText,
-                        fontSize: 10,
-                        marginRight: 5,
-                      }}>
-                      {truncateString(expense.category?.name, 7)} ◦
+            <TouchableOpacity
+              onPress={() =>
+                handleEdit(
+                  String(expense._id),
+                  expense.title,
+                  expense.description,
+                  expense.category,
+                  expense.date,
+                  expense.amount,
+                )
+              }
+              activeOpacity={0.7}>
+              <Animated.View
+                style={[
+                  styles.transactionContainer,
+                  {
+                    backgroundColor: colors.containerColor,
+                  },
+                ]}>
+                <View style={styles.iconNameContainer}>
+                  <View
+                    style={[
+                      styles.iconContainer,
+                      {backgroundColor: colors.iconContainer},
+                    ]}>
+                    <Icon
+                      name={expense.category?.icon ?? 'selection-ellipse'}
+                      size={20}
+                      color={expense.category?.color ?? colors.buttonText}
+                      type={'MaterialCommunityIcons'}
+                    />
+                  </View>
+                  <View>
+                    <PrimaryText>
+                      {truncateString(expense.title, 15)}
                     </PrimaryText>
-
-                    {expense.description !== '' ? (
+                    <View style={styles.descriptionContainer}>
                       <PrimaryText
                         style={{
                           color: colors.primaryText,
                           fontSize: 10,
                           marginRight: 5,
                         }}>
-                        {truncateString(expense.description, 4)} ◦
+                        {truncateString(expense.category?.name, 7)} ◦
                       </PrimaryText>
-                    ) : null}
 
-                    <PrimaryText
-                      style={{
-                        color: colors.primaryText,
-                        fontSize: 10,
-                        marginRight: 5,
-                      }}>
-                      {moment(expense.date).format('Do MMM')}
-                    </PrimaryText>
+                      {expense.description !== '' ? (
+                        <PrimaryText
+                          style={{
+                            color: colors.primaryText,
+                            fontSize: 10,
+                            marginRight: 5,
+                          }}>
+                          {truncateString(expense.description, 4)} ◦
+                        </PrimaryText>
+                      ) : null}
+
+                      <PrimaryText
+                        style={{
+                          color: colors.primaryText,
+                          fontSize: 10,
+                          marginRight: 5,
+                        }}>
+                        {moment(expense.date).format('Do MMM')}
+                      </PrimaryText>
+                    </View>
                   </View>
                 </View>
-              </View>
-              <View>
-                <PrimaryText style={{fontSize: 13}}>
-                  {currencySymbol}
-                  {Number.isInteger(expense.amount)
-                    ? formatCurrency(expense.amount)
-                    : formatCurrency(expense.amount.toFixed(2))}
-                </PrimaryText>
-              </View>
-            </Animated.View>
+                <View>
+                  <PrimaryText style={{fontSize: 13}}>
+                    {currencySymbol}
+                    {Number.isInteger(expense.amount)
+                      ? formatCurrency(expense.amount)
+                      : formatCurrency(expense.amount.toFixed(2))}
+                  </PrimaryText>
+                </View>
+              </Animated.View>
+            </TouchableOpacity>
           </Swipeable>
         </GestureHandlerRootView>
       ))}

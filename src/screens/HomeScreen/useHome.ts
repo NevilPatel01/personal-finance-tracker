@@ -43,18 +43,18 @@ const useHome = () => {
     dispatch({type: FETCH_ALL_USER_DATA});
     dispatch({type: FETCH_CURRENCY_DATA});
     dispatch({type: FETCH_ALL_CATEGORY_DATA});
-  }, [userId, userName, currencySymbol]);
+  }, [userId, userName, currencySymbol, dispatch]);
 
   useEffect(() => {
     dispatch(getExpenseRequest());
-  }, [userId]);
+  }, [dispatch, userId]);
 
   useEffect(() => {
     if (refreshing) {
       dispatch(getExpenseRequest());
       setRefreshing(false);
     }
-  }, [refreshing]);
+  }, [dispatch, refreshing]);
 
   console.log('in home screen', allTransactions);
 
@@ -118,7 +118,7 @@ const useHome = () => {
     sortedTransactions,
     formatTodaySpent,
     formatYesterdaySpent,
-    formatThisMonthSpent
+    formatThisMonthSpent,
   };
 };
 
