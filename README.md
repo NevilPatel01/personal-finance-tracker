@@ -3,6 +3,16 @@
 Personal Finance Tracker is a user-centric mobile application designed to help individuals track their expenses, manage their finances, and gain meaningful insights into their spending habits. The app offers customization, robust data management, and detailed reporting to make financial management simple and effective.
 
 ---
+## Mobile View
+
+Here is a screenshot from the mobile version of the app:
+<p align="center">
+  <img src="./assets/screenshots/zero_categories_screen_dark.png" alt="Categories Screen Dark" width="300"/>
+  <img src="./assets/screenshots/zero_categories_screen_light.png" alt="Categories Screen Light" width="300"/>
+</p>
+
+
+---
 
 ## Features
 
