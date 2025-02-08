@@ -7,6 +7,8 @@ Personal Finance Tracker is a user-centric mobile application designed to help i
 
 Here is a screenshot from the mobile version of the app:
 <p align="center">
+  <img src="./assets/screenshots/zero_report_screen_dark.png" alt="Report Screen Dark" width="300"/>
+  <img src="./assets/screenshots/zero_report_screen_light.png" alt="Report Screen Light" width="300"/>
   <img src="./assets/screenshots/zero_categories_screen_dark.png" alt="Categories Screen Dark" width="300"/>
   <img src="./assets/screenshots/zero_categories_screen_light.png" alt="Categories Screen Light" width="300"/>
 </p>
